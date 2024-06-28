@@ -31,7 +31,19 @@ if (url === '0') {
 bot.onText(/\/start/, function onPhotoText(msg) {
   bot.sendGame(msg.chat.id, gameName);
 });
-
+bot.on('callback_query', function (query) {
+    if(query.game_short_name !== gameName) {
+        bot.answerCallbackQuery(query.id, "Sorry, " + query.game_short_name + "' is not avaiable");
+    }
+    else{
+        queries[query.id] = query;
+        let gameurl = "https://jbaeg.github.io/maze/";
+        bot.answerCallbackQuery({
+            callback_query_id: query.id,
+            url: gameurl
+        });
+    }
+});
 // Handle callback queries
 bot.on('callback_query', function onCallbackQuery(callbackQuery) {
   bot.answerCallbackQuery(callbackQuery.id, { url });
