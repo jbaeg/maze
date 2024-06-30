@@ -6,6 +6,14 @@
     <title>Unity WebGL Player | Maze</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+	    <script>
+        // 텔레그램 로그인 콜백 함수
+        function onTelegramAuth(user) {
+            // 유니티로 로그인 성공 메시지를 보냅니다.
+            SendMessage('TelegramLoginManager', 'OnTelegramAuthSuccess', JSON.stringify(user));
+        }
+    </script>
+    <script async src="https://telegram.org/js/telegram-widget.js?8" data-telegram-login="mazenewbot" data-size="large" data-auth-url="https://YOUR_AUTH_URL" data-request-access="write" data-onauth="onTelegramAuth(user)"></script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
