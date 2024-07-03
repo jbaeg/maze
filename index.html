@@ -3,16 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Maze</title>	
+    <title>Unity WebGL Player | Maze</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <link rel="icon" type="image/svg+xml" href="//telegram.org/img/website_icon.svg?4">
-    <link rel="apple-touch-icon" sizes="180x180" href="//telegram.org/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="//telegram.org/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="//telegram.org/img/favicon-16x16.png">
-    <link rel="alternate icon" href="//telegram.org/img/favicon.ico" type="image/x-icon" />
-    <link href="//telegram.org/css/font-roboto.css?1" rel="stylesheet" type="text/css">
-    <link href="//telegram.org/css/widget-frame.css?67" rel="stylesheet" media="screen">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -30,11 +23,7 @@
         <div id="unity-build-title">Maze</div>
       </div>
     </div>
-    <div style="position:fixed;bottom:10px;left:10px;">
-      <a href="https://telegram.org/js/games.js" class="tgme_widget_share_btn" target="_blank"><i class="tgme_widget_share_icon"></i><span class="tgme_widget_share_label" target="_blank">Share</span></a>
-    </div>
-
-	<script>
+    <script>
 
       var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
@@ -68,7 +57,7 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/maze.loader.js=?1.0";
+      var loaderUrl = buildUrl + "/maze.loader.js";
       var config = {
         dataUrl: buildUrl + "/maze.data",
         frameworkUrl: buildUrl + "/maze.framework.js",
@@ -129,9 +118,5 @@
       document.body.appendChild(script);
 
     </script>
-	
-	
-    <!-- <script async src="https://telegram.org/js/telegram-widget.js?22" data-telegram-share-url="https://jbaeg.github.io/maze/" data-comment="MMMMM"></script> -->
-   
   </body>
 </html>
