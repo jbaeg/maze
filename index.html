@@ -6,38 +6,6 @@
     <title>Unity WebGL Player | Maze</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-	  <script>
-        function openProtoUrl(url) {
-            if (!url.match(/^(web\+)?tgb?:\/\/./)) {
-                return false;
-            }
-            var useIframe = navigator.userAgent.match(/iOS|iPhone OS|iPhone|iPod|iPad/i) ? true : false;
-            if (useIframe) {
-                var iframeContEl = document.getElementById('tgme_frame_cont') || document.body;
-                var iframeEl = document.createElement('iframe');
-                iframeContEl.appendChild(iframeEl);
-                var pageHidden = false;
-                var enableHidden = function () {
-                    pageHidden = true;
-                };
-                window.addEventListener('pagehide', enableHidden, false);
-                window.addEventListener('blur', enableHidden, false);
-                if (iframeEl !== null) {
-                    iframeEl.src = url;
-                }
-                setTimeout(function() {
-                    if (!pageHidden) {
-                        window.location = url;
-                    }
-                    window.removeEventListener('pagehide', enableHidden, false);
-                    window.removeEventListener('blur', enableHidden, false);
-                }, 2000);
-            } else {
-                window.location = url;
-            }
-            return true;
-        }
-    </script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -150,13 +118,5 @@
       document.body.appendChild(script);
 
     </script>
-	
-	<div style="position:fixed;bottom:10px;left:10px;">
-      <button onclick="TelegramGameProxy.shareScore()">Share</button>
-    </div>
-		<div style="position:fixed;bottom:50px;left:10px;">
-      <button onclick="TelegramGameProxy.openProtoUrl('tg://resolve?domain=example')">Open Telegram11</button>
-    </div>
-	<script src="https://telegram.org/js/games.js"></script>
   </body>
 </html>
